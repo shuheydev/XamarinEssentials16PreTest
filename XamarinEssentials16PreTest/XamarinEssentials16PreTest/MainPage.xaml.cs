@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using XamarinEssentials16PreTest.Views;
 
 namespace XamarinEssentials16PreTest
 {
@@ -16,14 +17,9 @@ namespace XamarinEssentials16PreTest
             InitializeComponent();
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private void MediaPicker_Clicked(object sender, EventArgs e)
         {
-            var permissionContactRead = await Permissions.CheckStatusAsync<Permissions.ContactsRead>();
-            var permissionContactWrite = await Permissions.CheckStatusAsync<Permissions.ContactsWrite>();
-            var selected =await Xamarin.Essentials.Contacts.PickContactAsync();
-
-            if (selected is null)
-                return;
+            Navigation.PushAsync(new MediaPickerPage());
         }
     }
 }

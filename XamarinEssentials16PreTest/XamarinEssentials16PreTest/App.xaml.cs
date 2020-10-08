@@ -10,7 +10,9 @@ namespace XamarinEssentials16PreTest
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage =new NavigationPage( new MainPage());
+
+            Device.SetFlags(new string[] { "MediaElement_Experimental" });
         }
 
         protected override void OnStart()
