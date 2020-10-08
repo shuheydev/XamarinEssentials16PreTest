@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinEssentials16PreTest.Views.MediaPickerPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:elem="xamarin.forms.">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button Command="{Binding TakePhotoCommand}" Text="Take Photo" />
+                <Button Command="{Binding CaptureVideoCommand}" Text="Capture Video" />
+                <Button Command="{Binding PickPhotoCommand}" Text="Pick Photo" />
+                <Button Command="{Binding PickVideoCommand}" Text="Pick Video" />
+                <Label Text="{Binding PhotoPath}" />
+                <Image Aspect="AspectFit" Source="{Binding PhotoPath}" />
+                <Label Text="{Binding VideoPath}" />
+                <MediaElement
+                    Aspect="AspectFill"
+                    BackgroundColor="Black"
+                    HeightRequest="300"
+                    HorizontalOptions="CenterAndExpand"
+                    ShowsPlaybackControls="True"
+                    Source="{Binding VideoPath}"
+                    WidthRequest="300" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
