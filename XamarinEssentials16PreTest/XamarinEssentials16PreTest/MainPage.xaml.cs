@@ -21,5 +21,10 @@ namespace XamarinEssentials16PreTest
         {
             Navigation.PushAsync(new MediaPickerPage());
         }
+
+        private void FilePicker_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new FilePickerPage());
+        }
     }
 }
