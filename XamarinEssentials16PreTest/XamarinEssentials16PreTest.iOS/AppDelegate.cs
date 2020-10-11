@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using ObjCRuntime;
 using UIKit;
 
 namespace XamarinEssentials16PreTest.iOS
@@ -27,5 +28,8 @@ namespace XamarinEssentials16PreTest.iOS
 
             return base.FinishedLaunching(app, options);
         }
+
+        public override void PerformActionForShortcutItem(UIApplication application, UIApplicationShortcutItem shortcutItem, UIOperationHandler completionHandler) =>
+            Xamarin.Essentials.Platform.PerformActionForShortcutItem(application, shortcutItem, completionHandler);
     }
 }
