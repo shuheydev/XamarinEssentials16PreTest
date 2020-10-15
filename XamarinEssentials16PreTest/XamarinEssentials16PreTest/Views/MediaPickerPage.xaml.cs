@@ -41,27 +41,6 @@ namespace XamarinEssentials16PreTest.Views
             this.BindingContext = this;
         }
 
-        async Task PickVideoAsync()
-        {
-            var video =await MediaPicker.PickVideoAsync();
-            await LoadVideoAsync(video);
-        }
-
-        #region PickPhoto
-        async Task PickPhotoAsync()
-        {
-            try
-            {
-                var photo = await MediaPicker.PickPhotoAsync();
-                await LoadPhotoAsync(photo);
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-        #endregion
-
         public ICommand TakePhotoCommand { get; private set; }
 
         public ICommand CaptureVideoCommand { get; private set; }
@@ -163,6 +142,27 @@ namespace XamarinEssentials16PreTest.Views
         }
         #endregion
 
+        #region PickVideo
+        async Task PickVideoAsync()
+        {
+            var video = await MediaPicker.PickVideoAsync();
+            await LoadVideoAsync(video);
+        }
+        #endregion
 
+        #region PickPhoto
+        async Task PickPhotoAsync()
+        {
+            try
+            {
+                var photo = await MediaPicker.PickPhotoAsync();
+                await LoadPhotoAsync(photo);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        #endregion
     }
 }

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinEssentials16PreTest.Views.FilePickerPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="File Picer">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button Command="{Binding PickSingleFileCommand}" Text="Pick Single File" />
+                <Label Text="{Binding FilePath}" />
+                <Button Command="{Binding PickMultipleFilesCommand}" Text="Pick Multiple Files" />
+                <ListView ItemsSource="{Binding Files}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding .}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
