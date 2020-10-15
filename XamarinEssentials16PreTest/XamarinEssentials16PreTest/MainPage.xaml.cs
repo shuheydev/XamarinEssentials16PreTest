@@ -26,5 +26,10 @@ namespace XamarinEssentials16PreTest
         {
             Navigation.PushAsync(new FilePickerPage());
         }
+
+        private void Contacts_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ContactsPage());
+        }
     }
 }

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinEssentials16PreTest.Views.ContactsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button Command="{Binding PickContactCommand}" Text="Pick Contact" />
+                <StackLayout BindingContext="{Binding Contact}">
+                    <Label Text="{Binding Name}" />
+                    <StackLayout BindableLayout.ItemsSource="{Binding Numbers}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Label>
+                                    <Label.Text>
+                                        <MultiBinding StringFormat="{}{0} ({1})">
+                                            <Binding Path="PhoneNumber" />
+                                            <Binding Path="ContactType" />
+                                        </MultiBinding>
+                                    </Label.Text>
+                                </Label>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                    <StackLayout BindableLayout.ItemsSource="{Binding Emails}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Label>
+                                    <Label.Text>
+                                        <MultiBinding StringFormat="{}{0} ({1})">
+                                            <Binding Path="EmailAddress" />
+                                            <Binding Path="ContactType" />
+                                        </MultiBinding>
+                                    </Label.Text>
+                                </Label>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                    <Label Text="{Binding ContactType}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
