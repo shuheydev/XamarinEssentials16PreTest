@@ -1,4 +1,3 @@
-
 name: CI on Push and Pull Request
 
 on: [push, pull_request]
@@ -42,4 +41,3 @@ jobs:
         cd XamarinEssentials16PreTest
         nuget restore
         msbuild XamarinEssentials16PreTest.iOS/XamarinEssentials16PreTest.iOS.csproj /verbosity:normal /t:Rebuild /p:Platform=iPhoneSimulator /p:Configuration=Debug
-view rawmain.yml hosted with ❤ by GitHub
